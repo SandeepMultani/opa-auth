@@ -1,0 +1,205 @@
+{
+    "domain_objects": [
+        {
+            "id": "nissan",
+            "parent_id": "domain-entitiy:tenant"
+        },
+        {
+            "id": "nissan-uk",
+            "parent_id": "domain-entitiy:tenant"
+        },
+        {
+            "id": "audi",
+            "parent_id": "domain-entitiy:tenant"
+        },
+        {
+            "id": "bmw",
+            "parent_id": "domain-entitiy:tenant"
+        },
+        {
+            "id": "sys",
+            "parent_id": "domain-entitiy:tenant"
+        },
+        {
+            "id": "demo-solution",
+            "parent_id": "domain-entitiy:solution"
+        },
+        {
+            "id": "demo-solution-b",
+            "parent_id": "domain-entitiy:solution"
+        }
+    ],
+    "entities": [
+        {
+            "id": "tenant",
+            "parent_id": "domain:tenancy"
+        },
+        {
+            "id": "tenant-log",
+            "parent_id": "domain:tenancy"
+        },
+        {
+            "id": "data-location",
+            "parent_id": "domain:change-management"
+        },
+        {
+            "id": "environment",
+            "parent_id": "domain:change-management"
+        },
+        {
+            "id": "conductor-location",
+            "parent_id": "domain:conductor-services"
+        },
+        {
+            "id": "solution",
+            "parent_id": "domain:conductor-services"
+        },
+        {
+            "id": "consumer-ui-a",
+            "parent_id": "domain:consumer-ui"
+        },
+        {
+            "id": "consumer-ui-b",
+            "parent_id": "domain:consumer-ui"
+        }
+    ],
+    "domains": [
+        {
+            "id": "sys-tenant-0-tenancy",
+            "parent_id": "tenant:sys-tenant-0"
+        },
+        {
+            "id": "sys-tenant-0-product-and-subscriptions",
+            "parent_id": "tenant:sys-tenant-0"
+        },
+        {
+            "id": "nissan-tenant-1-change-management",
+            "parent_id": "tenant:nissan-tenant-1"
+        },
+        {
+            "id": "nissan-uk-tenant-2-change-management",
+            "parent_id": "tenant:nissan-uk-tenant-2"
+        },
+        {
+            "id": "audi-tenant-4-change-management",
+            "parent_id": "tenant:audi-tenant-4"
+        },
+        {
+            "id": "bmw-tenant-3-change-management",
+            "parent_id": "tenant:bmw-tenant-3"
+        },
+        {
+            "id": "nissan-tenant-1-conductor-services",
+            "parent_id": "tenant:nissan-tenant-1"
+        },
+        {
+            "id": "nissan-uk-tenant-2-conductor-services",
+            "parent_id": "tenant:nissan-uk-tenant-2"
+        },
+        {
+            "id": "audi-tenant-4-consumer-ui",
+            "parent_id": "tenant:audi-tenant-4"
+        },
+        {
+            "id": "bmw-tenant-3-consumer-ui",
+            "parent_id": "tenant:bmw-tenant-3"
+        }
+    ],
+    "tenants": [
+        {
+            "id": "sys-tenant-0",
+            "name": "System Tenant"
+        },
+        {
+            "id": "nissan-tenant-1",
+            "name": "Nissan"
+        },
+        {
+            "id": "nissan-uk-tenant-2",
+            "name": "Nissan UK"
+        },
+        {
+            "id": "bmw-tenant-3",
+            "name": "BMW"
+        },
+        {
+            "id": "audi-tenant-4",
+            "name": "Audi"
+        }
+    ],
+    "roles": {
+        "admin": {
+            "grants": [
+                "view",
+                "add",
+                "edit",
+                "delete",
+                "execute"
+            ]
+        },
+        "editor": {
+            "grants": [
+                "view",
+                "add",
+                "edit"
+            ]
+        },
+        "viewer": {
+            "grants": [
+                "view"
+            ]
+        }
+    },
+    "groups": [
+        {
+            "id": "customer-services",
+            "parent_id": "tenant:sys-tenant-0"
+        },
+        {
+            "id": "nissan-admins",
+            "parent_id": "tenant:nissan-uk-tenant-2"
+        }
+    ],
+    "users": [
+        {
+            "assignments": [
+                {
+                    "resource": "tenant:nissan-tenant-1",
+                    "role": "viewer"
+                },
+                {
+                    "resource": "tenant:nissan-uk-tenant-2",
+                    "role": "admin"
+                }
+            ],
+            "id": "alen"
+        },
+        {
+            "assignments": [
+                {
+                    "resource": "tenant:audi-tenant-4",
+                    "role": "viewer"
+                }
+            ],
+            "id": "bob"
+        },
+        {
+            "assignments": [
+                {
+                    "resource": "tenant:bmw-tenant-3",
+                    "role": "editor"
+                }
+            ],
+            "id": "liam"
+        },
+        {
+            "assignments": [
+                {
+                    "resource": "tenant:sys-tenant-0",
+                    "role": "editor"
+                }
+            ],
+            "id": "sandeep"
+        }
+    ]
+}

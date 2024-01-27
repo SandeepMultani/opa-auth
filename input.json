@@ -1,0 +1,5 @@
+{
+    "action": "delete",
+    "resource": "domain:sys-tenant-0-tenancy",
+    "user": "sandeep"
+}
