@@ -1,5 +1,5 @@
 {
-    "domain_objects": [
+    "objects": [
         {
             "id": "nissan",
             "parent_id": "domain-entitiy:tenant"

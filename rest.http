@@ -1,0 +1,16 @@
+GET http://localhost:8080/bundle/data HTTP/1.1
+
+###
+
+GET http://localhost:8080/bundle/policy HTTP/1.1
+
+###
+
+POST http://localhost:8080/opa/eval HTTP/1.1
+content-type: application/json
+
+{
+	"action":   "delete",
+	"resource": "domain:sys-tenant-0-tenancy",
+	"user":     "sandeep"
+}
